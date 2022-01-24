@@ -53,6 +53,7 @@ https://education.github.com/pack?sort=popularity&tag=Cloud
 - Open a web browser window and visit <https://console.cloud.google.com/>.
 - Log into your Google account if required.
 - Create a new project called AIMLAC and link it to the billing account you just created. Be especially careful if you already use Google Cloud personally that you are billing the right account.
+- 
 
 
 ### Creating a virtual machine
@@ -60,15 +61,22 @@ https://education.github.com/pack?sort=popularity&tag=Cloud
 
 ![VM instances](../fig/gcloud_step1.png)
 
+- If this is the first time you've used this account with the compute Compute Engine you'll be asked to enable the Compute Engine API. 
+
+![Enable Compute Engine API](../figure/gcloud_step1.5.png)
+
 - Click on "Create Instance" on the page showing the list of current instances.
 - Give your VM a name, as we won't need much processing power choose f1-micro as the Machine type by selecting the N1 Series.
-- Change the operating system to the Container Optimised OS
+- In the Boot disk section click on the Change button and choose the "Container Optimized OS". 
+- Scroll to the bottom of the page and click on the "Create" button.
 
-![Cloud OS](../fig/gcloud_step2.png)
+![Configure VM Instance](../fig/gcloud_step2.png)
 
 ### SSH into your container from the Google Cloud Console
 
 - Click on the SSH option under the connect column in the VM Instances page and choose "Open in browser Window."
+- A new window should popup, you might have to adjust your popup blocker settings to allow this. 
+- Click on the Connect button in the window when asked "Do you want to initiate an SSH connection to VM instance".
 
 ![SSH to VM step 1](../fig/gcloud_step6.png)
 ![SSH to VM step 2](../fig/gcloud_step7.png)
@@ -76,7 +84,7 @@ https://education.github.com/pack?sort=popularity&tag=Cloud
 - From here you can run docker commands and launch the container as you've previously done by typing:
 
 ~~~
-$ docker run -it alice/alpine-python
+$ docker container run hello-world
 ~~~
 {: .language-bash}
 
@@ -123,7 +131,7 @@ Display the contents of the id_rsa.pub file and copy it to the clipboard. Then f
 
 ### Running a web server container from Google Cloud
 
-Now lets create a new Dockerfile which defines a container based on the nginx webserver. Create a directory called docker-webserver-example and `cd` into it.
+Now lets create a new Dockerfile which defines a container based on the Nginx webserver. Create a directory called docker-webserver-example and `cd` into it.
 
 ~~~
 mkdir docker-webserver-example
@@ -169,7 +177,7 @@ done
 Now build the container we've just specified 
 
 ~~~
-docker build -t alice/docker-webserver-example .
+docker image build -t alice/docker-webserver-example .
 ~~~
 {: .language-bash}
 
@@ -184,8 +192,8 @@ Go back to the Cloud console's VM Instances page and do the following:
 
 - Click on "Create Instance" on the page showing the list of current instances.
 - Give your VM a name, as we won't need much processing power choose f1-micro as the Machine type by selecting the N1 Series.
-- Tick the option "Deploy a container image to this VM instance".
-- Enter the path to container on Docker Hub which runs a webserver (in this case alice/docker-webserver-example) in the "Container image" box.
+- Click on the "Deploy Container" button in the container section
+- Enter the path to container on Docker Hub which runs a webserver (in this case alice/docker-webserver-example, but replace alice with your own username) in the "Container image" box.
 - Scrolldown and tick "Allow HTTP traffic" at the bottom of the page under Firewall
 
 ![Allow HTTP](../fig/gcloud_step3.png)
