@@ -53,8 +53,6 @@ https://education.github.com/pack?sort=popularity&tag=Cloud
 - Open a web browser window and visit <https://console.cloud.google.com/>.
 - Log into your Google account if required.
 - Create a new project called AIMLAC and link it to the billing account you just created. Be especially careful if you already use Google Cloud personally that you are billing the right account.
-- 
-
 
 ### Creating a virtual machine
 - Click on the grill menu, Compute Engine, VM Instances
@@ -63,7 +61,7 @@ https://education.github.com/pack?sort=popularity&tag=Cloud
 
 - If this is the first time you've used this account with the compute Compute Engine you'll be asked to enable the Compute Engine API. 
 
-![Enable Compute Engine API](../figure/gcloud_step1.5.png)
+![Enable Compute Engine API](../fig/gcloud_step1.5.png)
 
 - Click on "Create Instance" on the page showing the list of current instances.
 - Give your VM a name, as we won't need much processing power choose f1-micro as the Machine type by selecting the N1 Series.
