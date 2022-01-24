@@ -182,7 +182,7 @@ docker image build -t alice/docker-webserver-example .
 Now lets push it to Docker Hub:
 
 ~~~
-docker push alice/docker-webserver-example
+docker image push alice/docker-webserver-example
 ~~~
 {: .language-bash}
 
