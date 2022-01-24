@@ -19,7 +19,7 @@ There are lots of ways containers can be run on cloud computing platforms (a.k.a
 Please note these options can be constantly changing, check with the Cloud providers webpage for the latest details. Beware that many of the free trials require you to give payment information and you will be billed at the end of the trial or if you exceed the free trial limits. Many of the cloud providers offer charge limit options, set these to ensure you don't get an sudden large bill. 
 
 ## Educational Credits
-For this lesson (run by AIMLAC CDT, January 2021) we have received free credit from Google for $50 per student, you will not need to register a credit card to use this. You will have each been emailed a link to activate this.
+For this lesson (run by AIMLAC CDT, January 2022) we have received free credit from Google for $50 per student, you will not need to register a credit card to use this. You will have each been emailed a link to activate this.
 
 {% comment %}
 
